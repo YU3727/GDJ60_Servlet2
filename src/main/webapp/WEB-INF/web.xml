@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+<!-- home 객체를 만드는 코드 -->
+	<servlet>
+	<!-- HomeController home = new HomeController(); Java에서 이 코드에 해당-->
+		<servlet-name>home</servlet-name>
+		<servlet-class>com.pooh.home.HomeController</servlet-class>
+	</servlet>
+	
+<!--어떤 url이 오면 이 코드(home)를 실행하겠습니까?에 해당-->
+	<servlet-mapping>
+	<!-- url 패턴이 '/' root로 들어오면 home을 실행하세요의 의미-->
+		<servlet-name>home</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!-- '/'는 root. ip:port/project명까지를 의미함 -->
+	
+	
+	<servlet>
+		<servlet-name>product</servlet-name>
+		<servlet-class>com.pooh.home.product.ProductController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>product</servlet-name>
+		<url-pattern>/product</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>member</servlet-name>
+		<servlet-class>com.pooh.home.member.MemberController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>member</servlet-name>
+		<!-- /member 이 주소가 입력되면 member 서블릿이 실행되도록 함 -->
+		<url-pattern>/memberList.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
