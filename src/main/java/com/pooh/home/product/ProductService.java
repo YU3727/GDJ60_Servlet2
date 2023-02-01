@@ -8,6 +8,7 @@ import com.pooh.home.member.MemberDTO;
 public class ProductService { //test용 메서드
 //230130 6교시 Service는 DAO로 작업을 하기 전/후처리를 하기 위한 메서드명이다.
 //230131 1교시 결합도
+//230201 4교시 
 	
 	//결합도가 높다(강하다)
 //	1. 변수 생성하면서 초기화(객체생성) - 잘안씀
@@ -27,6 +28,13 @@ public class ProductService { //test용 메서드
 	public void setProductDAO(ProductDAO pDAO) {
 		this.pDAO = pDAO;
 	}
+	
+	//230201 4교시 list 가져오는 메서드 추가
+	public List<ProductDTO> getProductList() throws Exception{
+		//여기서는 DAO를 호출하자
+		return pDAO.getProductList();
+	}
+	
 	
 	
 	public int setAddProduct(ProductDTO pDTO, List<ProductOptionDTO> ar) throws Exception{

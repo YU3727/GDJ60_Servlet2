@@ -12,7 +12,7 @@
 	<!-- web.xml을 보면 ProductController를 호출하기 위한 주소로 /product를 적어두었기 때문에 -->
 	<!-- 아래의 주소로 가야한다. -->
 	<!-- **작업할 때 Project Explorer에서 찾지말고 홈페이지 url을 보고 주소를 참조하는게 안헷갈리고 좋다 -->
-	<a href ="./product">ProductList 상대경로</a>
+	<a href ="./product?name=test&detail=explain">ProductList 상대경로</a>
 	
 	<a href="./memberList.do">MemberList 상대경로</a>
 </body>

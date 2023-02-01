@@ -22,8 +22,8 @@
 	
 	 -->
 	<!-- 상대경로로 표시, 현재폴더는 /html. html에서 움직인다고 생각한다. -->
-	<a href=".product.jsp">Product</a>
-	<a href=".member.jsp">Member</a>
+	<a href="./product.jsp">Product</a>
+	<a href="./member.jsp">Member</a>
 	<a href="../">HOME</a>
 	<a href="../product">PRO</a> <br>
 	

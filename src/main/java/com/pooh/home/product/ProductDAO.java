@@ -138,7 +138,7 @@ public class ProductDAO {
 		st.setLong(1, pDTO.getProductNum()); //시퀀스를 쓸 경우 쿼리문에 쓰지않고 productnum쪽에 써줌....
 		st.setString(2, pDTO.getProductName());
 		st.setString(3, pDTO.getProductDetail());
-		st.setDouble(4, pDTO.getProductScore()); //물건이 처음 등록될 때 평점은 0점이니까 시작점수를 0으로
+//		st.setDouble(4, pDTO.getProductScore()); //물건이 처음 등록될 때 평점은 0점이니까 시작점수를 0으로
 		
 		int result = st.executeUpdate();
 		

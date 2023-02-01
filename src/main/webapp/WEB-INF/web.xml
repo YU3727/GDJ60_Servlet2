@@ -24,7 +24,7 @@
 
 	<servlet-mapping>
 		<servlet-name>product</servlet-name>
-		<url-pattern>/product</url-pattern>
+		<url-pattern>/product/*</url-pattern> <!-- root 밑에 product로 시작하는 모든것들 -->
 	</servlet-mapping>
 
 
