@@ -29,12 +29,18 @@ public class ProductService { //test용 메서드
 		this.pDAO = pDAO;
 	}
 	
+	
+	//230201 6교시 list 하나를 가져오는 메서드 추가
+	public ProductDTO getProductDetail(ProductDTO pDTO) throws Exception{
+		return pDAO.getProductDetail(pDTO);
+	}
+	
+	
 	//230201 4교시 list 가져오는 메서드 추가
 	public List<ProductDTO> getProductList() throws Exception{
 		//여기서는 DAO를 호출하자
 		return pDAO.getProductList();
 	}
-	
 	
 	
 	public int setAddProduct(ProductDTO pDTO, List<ProductOptionDTO> ar) throws Exception{

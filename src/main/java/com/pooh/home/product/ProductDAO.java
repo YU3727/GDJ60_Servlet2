@@ -10,7 +10,7 @@ import com.pooh.home.util.DBConnection;
 
 public class ProductDAO {
 //230130 3~5교시
-	
+//230201 6교시
 	
 	
 	//5교시 getMax -> 6교시 getProductNum
@@ -90,6 +90,39 @@ public class ProductDAO {
 		return result;
 		
 	}
+	
+	
+	
+	//getProductDetail
+	public ProductDTO getProductDetail(ProductDTO pDTO) throws Exception{
+		
+		Connection con = DBConnection.getConnection();
+		
+		String sql = "SELECT * FROM PRODUCT WHERE PRODUCTNUM = ?";
+		
+		PreparedStatement st = con.prepareStatement(sql);
+		
+		st.setLong(1, pDTO.getProductNum());
+		
+		ResultSet rs = st.executeQuery();
+		
+		if(rs.next()) {
+			pDTO = new ProductDTO(); //pDTO를 새로 만들어서 넣어라
+			pDTO.setProductNum(rs.getLong("PRODUCTNUM"));
+			pDTO.setProductName(rs.getString("PRODUCTNAME"));
+			pDTO.setProductDetail(rs.getString("PRODUCTDETAIL"));
+			pDTO.setProductScore(rs.getDouble("PRODUCTSCORE"));
+		}else {
+			pDTO = null;
+		}
+		
+		DBConnection.disConnection(rs, st, con);
+		
+		return pDTO;
+		
+		
+	}
+	
 	
 	
 	
