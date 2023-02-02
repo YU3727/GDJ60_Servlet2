@@ -12,6 +12,7 @@ public class ProductService { //test용 메서드
 	
 	//결합도가 높다(강하다)
 //	1. 변수 생성하면서 초기화(객체생성) - 잘안씀
+	//서비스는 DAO에 대해 의존적
 	private ProductDAO pDAO; //= new ProductDAO(); - 잘안씀
 	
 //	2. instance block - 잘안씀

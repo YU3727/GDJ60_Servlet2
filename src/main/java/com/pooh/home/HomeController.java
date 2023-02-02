@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeController extends HttpServlet {
 //230131 3~4교시, 7교시
 //230201 2~3교시 Parameter 정보 꺼내보기
+//230202 1교시 개념복습 - 군인은 총과 총알을 가지고있다.를 java로 표현해보기
 	private static final long serialVersionUID = 1L;
        
     /**
@@ -32,7 +33,21 @@ public class HomeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Hello YU");
+		System.out.println("Hello YU, HomeController");
+		
+		//230202 1교시 개념복습 - 군인은 총과 총알을 가지고있다.
+		//클래스(설계도)로 객체를 만듦. 군인, 총, 총알을 객체로 만듦
+		Soldier soldier = new Soldier(); 
+		Gun gun = new Gun();
+		Bullet bullet = new Bullet();
+		
+		//군인에게 총을 줌, 총에 총알을 줌
+		soldier.setGun(gun);
+		gun.setBullet(bullet);
+		
+		//군인이 총을 쏜다.
+		soldier.useGun();
+		
 		
 		//요청된 Parameter들의 정보를 꺼내보고 싶을때
 		//Client에서 Server로 보내는 모든 요청은 request 객체에 존재한다. request.~

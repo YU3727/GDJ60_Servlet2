@@ -21,8 +21,10 @@ public class ProductController extends HttpServlet {
 //230201 3~4교시
 	private static final long serialVersionUID = 1L;
 	
-	private ProductDAO pDAO;
+	//컨트롤러는 서비스에 대해 의존적
 	private ProductService productService;
+	
+	private ProductDAO pDAO;
 	private ProductDTO pDTO;
        
     /**
@@ -31,14 +33,15 @@ public class ProductController extends HttpServlet {
     public ProductController() {
         super();
         // TODO Auto-generated constructor stub
-        pDAO = new ProductDAO();
         productService = new ProductService();
+        pDAO = new ProductDAO();
         pDTO = new ProductDTO();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    //Tomcat에서 요청이 들어오면 Service 메서드를 호출하고, Service메서드에서 get/post 구분해서 doGet/doPost를 호출한다 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Product Page");
 		
@@ -59,6 +62,7 @@ public class ProductController extends HttpServlet {
 		case "list.do" :
 			try {
 				List<ProductDTO> ar = productService.getProductList();
+				//stack 형식이므로 doget은 일시정지
 				//request에 list라는 이름으로 serverdata를 담아둠.
 				request.setAttribute("list", ar);
 			} catch (Exception e) {
