@@ -1,6 +1,6 @@
 <%@page import="oracle.jdbc.internal.PDBChangeEvent"%>
 <%@page import="java.util.List"%>
-<%@page import="com.pooh.home.product.ProductDTO"%>
+<%@page import="com.pooh.s1.product.ProductDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

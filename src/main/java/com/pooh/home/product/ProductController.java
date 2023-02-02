@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pooh.s1.product.ProductDAO;
+import com.pooh.s1.product.ProductDTO;
+import com.pooh.s1.product.ProductService;
+
 /**
  * Servlet implementation class ProductController
  */
