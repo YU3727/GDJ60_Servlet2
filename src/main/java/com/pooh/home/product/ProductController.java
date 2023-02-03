@@ -87,7 +87,7 @@ public class ProductController extends HttpServlet {
 			System.out.println("상품삭제입니다");
 			break;
 		case "detail.do" :
-			//parameter 꺼냄
+			//모든 요청정보가 들어있는 request에서 parameter 꺼냄
 			String para = request.getParameter("productnum");
 			//parameter는 String 타입인데, productnum은 Long 타입이라 형변환
 			Long num = Long.parseLong(para);
